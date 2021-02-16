@@ -5,17 +5,20 @@ import (
 	"log"
 	"net"
 	"strconv"
+	"time"
 )
 
 var (
-	ip             string // user ip
-	ipConnection   string // friend ip
-	port           int    // user port
-	portConnection int    // friend port
-	proto          = 17
-	udpAddr        *net.UDPAddr // connection address
-	conn           *net.UDPConn // connection
-	messageEvent   = "[message sent]"
+	ip               string // user ip
+	ipConnection     string // friend ip
+	port             int    // user port
+	portConnection   int    // friend port
+	proto            = 17
+	udpAddr          *net.UDPAddr // connection address
+	conn             *net.UDPConn // connection
+	messageEvent     = "[message sent]"
+	messageEventFail = "[message sending failed]"
+	messageEventFlag = false
 )
 
 func connect() {
@@ -58,17 +61,30 @@ func connect() {
 	menu()
 }
 
+func writeAttempts(writeFunction func([]byte) (int, error), message []byte, attempts int) {
+	writeFunction(message)
+	time.Sleep(2 * time.Second)
+	if !messageEventFlag {
+		fmt.Printf("%v, %v\n", messageEventFail, attempts)
+		if attempts != 0 {
+			writeAttempts(writeFunction, message, attempts-1)
+		}
+	}
+}
+
 func sendUDPResponse(message string) {
 	if messageEvent != message {
 		SaveMessage(message)
+		messageEventFlag = false
+	} else {
+		messageEventFlag = true
 	}
 	Conn, _ := net.DialUDP("udp", nil, &net.UDPAddr{IP: net.ParseIP(ipConnection), Port: portConnection, Zone: ""})
 	defer Conn.Close()
-	Conn.Write([]byte(message))
+	writeAttempts(Conn.Write, []byte(message), 3)
 }
 
 func handleUDPConnection() bool {
-
 	// here is where you want to do stuff like read or write to client
 	buffer := make([]byte, 1024)
 
@@ -76,7 +92,8 @@ func handleUDPConnection() bool {
 
 	message := string(buffer[:n])
 	fmt.Printf("UDP client: %v %v\n", addr, message)
-	if messageEvent != message {
+	messageEventFlag = true
+	if messageEvent != message && message != messageEventFail {
 		sendUDPResponse(messageEvent)
 		SaveMessage(message)
 	}
