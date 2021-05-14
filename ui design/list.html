@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wgame</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" type="text/css" href="/fancy-button.css">
+    <link rel="stylesheet" type="text/css" href="/fancy-form.css">
+    <link rel="stylesheet" type="text/css" href="/fancy-list.css">
+    <link href="/fontawesome/css/all.css" rel="stylesheet">
+    <script>
+      function toggleNavBar() {
+        var x = document.getElementById("topnav");
+        if (x.className === "topnav"){ 
+          x.classList.add("topnav_opened");
+        } else {
+          x.classList.remove("topnav_opened");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="topnav" id="topnav">
+        <a href="/auth.html"> <img class="logo" src="/logo.png" class="logo" width="60" height="60" alt="logo"></a>
+        <a class="topnav__link" href="/auth.html">Auth</a>
+        <a class="topnav__link" href="/main.html">Main</a>
+        <a class="topnav__link" href="/create.html">Create Game</a>
+        <a class="topnav__link" href="/list.html">Game List</a>
+        <a class="topnav__link" href="/crocodile.html">Crocodile</a>
+        <a class="topnav__link" href="/alias.html">Alias</a>
+        <i onclick="toggleNavBar()" class="toggler">=</i>
+      </nav>
+    </header>
+    <main>
+      <section class="games__container">
+        <section class="games">
+          <ol class="games__list" start="0">
+            <li class="list__row">
+              <span class="list__column">Name</span>
+              <span class="list__column">Players</span>
+              <span class="list__column">Game</span>
+              <span class="list__column">Actions</span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Lorem</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Crocodile</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Lobby</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Alias</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Ipsum</span>
+              <span class="list__column">4/6</span>
+              <span class="list__column">Crocodile</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">1/12</span>
+              <span class="list__column">Alias</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Alias</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Crocodile</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Alias</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Crocodile</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Crocodile</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Crocodile</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Crocodile</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Crocodile</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+            <li class="list__row">
+              <span class="list__column">Vlad</span>
+              <span class="list__column">3/4</span>
+              <span class="list__column">Crocodile</span>
+              <span class="list__column"><a class="glow-on-hover glow-on-hover_tiny" href="">Join</a></span>
+            </li>
+
+          </ol>
+        </section>
+  
+        <section class="user">
+          <section class="user__stat">
+            <article class="stat">
+              <h1>User name</h1>
+              <a class="glow-on-hover user__action" class="glow-on-hover glow-on-hover_tiny" href="">Create game</a>
+              <details class="stat__details">
+                <summary>Statistic</summary>
+                <p>Place in rating: 1, Wins: 2</p>
+                <p>Guessed words: 3, Registrated at 10.10.2021</p>
+              </details>
+            </article>
+          </section>
+        </section>
+      </section>
+      </main>
+      <footer>
+        <span>
+          <small>Follow us:</small>
+          <a href="/"><i class="fab fa-telegram"></i></a>
+          <a href="/"><i class="fab fa-vk"></i></a>
+          <a href="/"><i class="fab fa-viber"></i></a>
+        </span>
+      </footer>
+  </body>
+</html>

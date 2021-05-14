@@ -1,34 +1,13 @@
-<<<<<<< HEAD
-# frontend_labs_3_course
-=======
-# frontend_labs_3_course
+### 3 lab, ui design
 
-### 1 лабораторная, чат через udp
-- Вариант 3
-- `Есть видео работы программы`
-- Всё происходит локально
-- Написано на golang
-- go version go1.15.8 linux/amd64
-- Для обработки аргументов использовал cobra
-- Запустить с помощью
-```
-	go run *.go -u user_name
-```
-- функция подключения
-```golang
-	func connect() {
-```
-- функция отправления запроса
-```golang
-	func sendUDPResponse(message string) {
-```
-- функция прослушивания подключения
-```golang
-	func handleUDPConnection() bool {
-```
-- Запускаем, пишем ip+port свой и друга
-- Нажимаем q и пишем сообщения, или нажимаем w и видим список всех сообщений сеанса
-- В функции connect в отдельном потоке запускаю у каждого пользователя сервер с помощью функции handleUDPConnection
-- При отправке сообщения отправляю обратно ещё один запрос, чтобы отправитель увидел [message sent]
-- Для того, чтобы увидеть всю переписку, каждое сообщение у пользователей сохраняется в файл и его можно просмотреть, нажав на w.
->>>>>>> 35e8d2e091c90e0f2632ed360900567a3fe750f1
+- Theme changing
+- BEM
+- Adaptive (at least i tried) design
+- All conditions were met
+
+- https://appwgame.web.app/main.html
+- https://appwgame.web.app/auth.html
+- https://appwgame.web.app/list.html
+- https://appwgame.web.app/crocodile.html
+- https://appwgame.web.app/alias.html
+- https://appwgame.web.app/create.html
