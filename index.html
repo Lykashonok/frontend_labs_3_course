@@ -15,17 +15,14 @@
   <body>
     <nav>
       <a href="/home" onclick="router.action('/home', {foo: 2, bar: {value : 123123}}); return false;">home</a><br>
-      <a href="/home/test" onclick="router.action('/home/test', {foo: 'test', bar: '2'}); return false;">home test</a><br>
+      <a href="/home/test" onclick="router.action('/home/test', {foo: {foo: {foo: 'bar'}}, bar: '2'}); return false;">home test</a><br>
       <a href="/about" onclick="router.action('/about', {foo: 1, bar: '1'}); return false;">about</a><br>
     </nav>
 
     <div id="header"></div>
-    <div id="app">app</div>
+    <div id="app"></div>
     <div id="footer"></div>
 
-    <!-- JS section -->
-    <script src="/js/funcs.js"></script>
-    <script src="/js/router.js"></script>
-    <script type="module" src="/js/app.js"></script>
+    <script type="module" src="/public/app.js"></script>
   </body>
 </html>

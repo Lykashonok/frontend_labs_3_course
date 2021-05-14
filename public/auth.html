@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wgame</title>
+    <link rel="stylesheet" type="text/css" href="/public/styles.css">
+    <link rel="stylesheet" type="text/css" href="/public/fancy-button.css">
+    <link rel="stylesheet" type="text/css" href="/public/fancy-form.css">
+    <link rel="stylesheet" type="text/css" href="/public/fancy-input.css">
+    <script>
+      window.onload = () => {
+        let toggled = false;
+        let overlay = document.getElementById("overlay");
+        let switcher = document.getElementById("switcher");
+        switcher.onclick = (event) => {
+          if (toggled) {
+            overlay.classList.remove("overlay_shifted");
+            switcher.textContent = "Wanna register?";
+          } else {
+            overlay.classList.add("overlay_shifted");
+            switcher.textContent = "Wanna log in?";
+          }
+          toggled = !toggled;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/auth.html"> <img class="logo" src="/public/static/logo.png" class="logo" width="60" height="60" alt="logo"></a>
+        <a href="/auth.html">Auth</a>
+        <a href="/main.html">Main</a>
+        <a href="/create.html">Create Game</a>
+        <a href="/list.html">Game List</a>
+        <a href="/crocodile.html">Crocodile</a>
+        <a href="/alias.html">Alias</a>
+      </nav>
+    </header>
+    <main>
+      <section class="fancy-form">
+        <article class="fancy-form__content">
+          <form class="shifted-form">
+            <fieldset>
+              <legend>Log in</legend>
+              <p class="fancy-field">
+                <input class="fancy-input" placeholder="Login" type="" name="login" id="login">
+                <label class="fancy-label" for="login">Login</label>
+              </p>
+              <p class="fancy-field">
+                <input class="fancy-input" placeholder="Password" type="" name="password" id="password">
+                <label class="fancy-label" for="password">Password</label>
+              </p>
+              <button class="fancy-submit glow-on-hover" type="button">Log in</button>
+            </fieldset>
+          </form>
+
+          <form class="shifted-form shifted-form_colored">
+            <fieldset>
+              <legend>Register</legend>
+              <p class="fancy-field">
+                <input class="fancy-input" placeholder="Nickname" type="" name="nickname_register" id="nickname_register" value="">
+                <label class="fancy-label" for="nickname_register">Nickname</label>
+              </p>
+              <p class="fancy-field">
+                <input class="fancy-input" placeholder="Password" type="" name="password_register" id="password_register" value="">
+                <label class="fancy-label" for="password_register">Password</label>
+              </p>
+              <p class="fancy-field">
+                <input class="fancy-input" placeholder="Repeat password" type="" name="password_repeat_register" id="password_repeat_register" value="">
+                <label class="fancy-label" for="password_repeat_register">Repeat password</label>
+              </p>
+              <button class="fancy-submit glow-on-hover" type="button">Register</button>
+            </fieldset>
+          </form>
+
+          <div id="overlay" class="overlay">
+            <div class="overlay__content">
+              <article class="overlay__switcher">
+                <h2>Hello</h2>
+                <button id="switcher" class="fancy-submit glow-on-hover" type="button">Wanna register?</button>
+              </article>
+
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+</html>
