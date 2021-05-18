@@ -1,0 +1,36 @@
+<section class="games__container">
+  <section class="games">
+    <ol class="games__list" start="0">
+      <li class="list__row">
+        <span class="list__column">Name</span>
+        <span class="list__column">Players</span>
+        <span class="list__column">Game</span>
+        <span class="list__column">Actions</span>
+      </li>
+      <li class="list__row" *vlFor="let game of games">
+        <span class="list__column">{{game.name}}</span>
+        <span class="list__column">{{game.length}}</span>
+        <span class="list__column">{{game.type}}</span>
+        <span class="list__column">
+          <a class="glow-on-hover glow-on-hover_tiny" [vlClick]="toGame(event, {{game.id}}, {{game.type}})" href="/{{game.type}}/{{game.id}}">Join</a>
+        </span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="user">
+    <section class="user__stat">
+      <article [vlShow]="isAuth" class="stat">
+        <h1 [vlModel]="displayName"></h1>
+        <a [vlClick]="navigate(event, /create)" class="glow-on-hover user__action" class="glow-on-hover glow-on-hover_tiny" href="/create">Create game</a>
+        <details class="stat__details">
+          <summary>Statistic</summary>
+          <p>Wins: <span [vlModel]="wins">2</span></p>
+          <p>Guessed words: <span [vlModel]="guessed">3</span></p>
+          <p>Registrated at: <span [vlModel]="registrationDate"> 10.10.2021</span></p>
+        </details>
+      </article>
+      <a [vlShow]="!isAuth" class="glow-on-hover" [vlClick]="navigate(event, /auth)">Log in</a>
+    </section>
+  </section>
+</section>

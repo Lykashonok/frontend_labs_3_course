@@ -1,0 +1,32 @@
+<section class="fancy-form">
+  <article class="fancy-form__content fancy-form__content_single">
+    <form class="shifted-form" [vlSubmit]="createSubmit()">
+      <fieldset>
+        <legend>Create game</legend>
+        <p class="fancy-field">
+          <input [vlModel]="name" class="fancy-input" placeholder="Room name" type="" name="name" id="name">
+          <label class="fancy-label" for="login">Room name</label>
+        </p>
+        <p class="fancy-field">
+          <select [vlModel]="max" class="fancy-input" name="max" id="max" value="6">
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+          </select>
+          <label class="fancy-label" for="max">Max turns</label>
+        </p>
+        <p class="fancy-field">
+          <select [vlModel]="type" class="fancy-input" name="type" id="type" value="6">
+            <!-- <option value="crocodile">Crocodile</option> -->
+            <option value="alias">Alias</option>
+          </select>
+          <label class="fancy-label" for="type">Game</label>
+        </p>
+        <button class="fancy-submit glow-on-hover" type="submit">Create</button>
+      </fieldset>
+    </form>
+  </article>
+</section>

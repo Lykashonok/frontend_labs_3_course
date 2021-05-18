@@ -1,0 +1,65 @@
+.logo {
+	animation-name: floating;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+
+.topnav > a {
+	color: var(--main-color-gray);
+}
+
+.topnav > a:hover {
+	color: var(--main-color-white);
+}
+
+.topnav {
+	overflow: hidden;
+	display: flex;
+	padding: 0px 10px;
+	align-items: center;
+}
+
+.topnav > .topnav__link {
+	display: none;
+}
+
+.topnav > .topnav__link:focus {
+	background-color: var(--main-color-gray);
+	color: var(--main-color-black);
+	border-radius: 4px;
+	outline: none;
+}
+
+.hidden {
+	display: none !important;
+}
+
+nav.topnav_opened {
+	display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+}
+
+nav.topnav_opened > .topnav__link {
+	display: block;
+}
+
+.toggler {
+	display: block;
+	margin-right: 20px;
+	color: #fff;
+	font-style: normal;
+}
+
+nav.topnav_opened > .toggler {
+	margin-right: 0;
+}
+
+@media screen and (min-width: 800px) {
+	.toggler {
+		display: none;
+	}
+	.topnav > .topnav__link {
+		display: block;
+	}
+}

@@ -1,0 +1,48 @@
+<section class="fancy-form">
+  <article class="fancy-form__content">
+    <form class="shifted-form" [vlSubmit]="loginSubmit()">
+      <fieldset>
+        <legend>Login</legend>
+        <p class="fancy-field">
+          <input class="fancy-input" [vlModel]="login" placeholder="Login" name="login" id="login">
+          <label class="fancy-label" for="login">Login</label>
+        </p>
+        <p class="fancy-field">
+          <input class="fancy-input" [vlModel]="password" placeholder="Password" type="password" name="password" id="password">
+          <label class="fancy-label" for="password">Password</label>
+        </p>
+        <button class="fancy-submit glow-on-hover" type="submit">Log in</button>
+        <span class="error" [vlModel]="loginErrorMessage"></span>
+      </fieldset>
+    </form>
+
+    <form class="shifted-form shifted-form_colored" [vlSubmit]="registerSubmit()">
+      <fieldset>
+        <legend>Register</legend>
+        <p class="fancy-field">
+          <input class="fancy-input" [vlModel]="loginRegister" placeholder="Nickname" type="" name="nickname_register" id="nickname_register" value="">
+          <label class="fancy-label" for="nickname_register">Email</label>
+        </p>
+        <p class="fancy-field">
+          <input class="fancy-input" [vlModel]="passwordRegister" placeholder="Password" type="password" name="password_register" id="password_register" value="">
+          <label class="fancy-label" for="password_register">Password</label>
+        </p>
+        <p class="fancy-field">
+          <input class="fancy-input" [vlModel]="passwordRepeatRegister" placeholder="Repeat password" type="password" name="password_repeat_register" id="password_repeat_register" value="">
+          <label class="fancy-label" for="password_repeat_register">Repeat password</label>
+        </p>
+        <button class="fancy-submit glow-on-hover" type="submit">Register</button>
+        <span class="error" [vlModel]="registerErrorMessage"></span>
+      </fieldset>
+    </form>
+
+    <div id="overlay" class="overlay">
+      <div class="overlay__content">
+        <article class="overlay__switcher">
+          <h2>Hello</h2>
+          <button [vlClick]="switch(event)" id="switcher" class="fancy-submit glow-on-hover glow-on-hover_full" type="button">Wanna register?</button>
+        </article>
+      </div>
+    </div>
+  </article>
+</section>

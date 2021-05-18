@@ -1,0 +1,39 @@
+<section class="user">
+  <section class="user__actions">
+    <a [vlClick]="navigate(event, /create)" class="glow-on-hover user__action" href="/create">Create game</a>
+    <a [vlClick]="navigate(event, /list)" class="glow-on-hover user__action" href="/list">Connect to game</a>
+  </section>
+
+  <section class="user__stat">
+    <article [vlShow]="isAuth" class="stat">
+      <h1 [vlModel]="displayName"></h1>
+      <details class="stat__details">
+        <summary>Statistic</summary>
+        <p>Wins: <span [vlModel]="wins">2</span></p>
+        <p>Guessed words: <span [vlModel]="guessed">3</span></p>
+        <p>Registrated at: <span [vlModel]="registrationDate"> 10.10.2021</span></p>
+      </details>
+    </article>
+    <a [vlShow]="!isAuth" class="glow-on-hover" [vlClick]="navigate(event, /auth)">Log in</a>
+  </section>
+</section>
+
+<section class="statistic">
+  <ol class="statistic__list" start="0">
+    <li class="list__row">
+      <span class="list__column">Name</span>
+      <span class="list__column">Wins</span>
+      <span class="list__column">Guessed</span>
+      <span class="list__column">Registered</span>
+      <span class="list__column">Total Score</span>
+    </li>
+    <li class="list__row" *vlFor="let user of users">
+      <span class="list__column">{{user.displayName}}</span>
+      <span class="list__column">{{user.wins}}</span>
+      <span class="list__column">{{user.guessed}}</span>
+      <span class="list__column"><time>{{user.registrationDate}}</time></span>
+      <span class="list__column"><strong>{{user.total}}</strong></span>
+    </li>
+
+  </ol>
+</section>
