@@ -1,0 +1,35 @@
+<div class="crocodile__container">
+  <section class="crocodile">
+    <section class="crocodile__workplace">
+      <canvas id="canvas" class="workplace"></canvas>
+      <!-- <img id="canvasimg" class="canvasimg"> -->
+      <!-- <img src="/canvas.png" alt="canvas"> -->
+      <span class="current-word" [vlModel]="currentWord"></span>
+      <article class="workplace__toolbar">
+        <i [vlClick]="selectColor(red)"   class="toolbar__tool toolbar__tool_selected toolbar__color_red"></i>
+        <i [vlClick]="selectColor(green)" class="toolbar__tool toolbar__color_green"></i>
+        <i [vlClick]="selectColor(blue)"  class="toolbar__tool toolbar__color_blue"></i>
+        <i [vlClick]="selectColor(white)" class="toolbar__tool toolbar__color_white"></i>
+        <i [vlClick]="selectColor(b;ack)" class="toolbar__tool toolbar__color_black"></i>
+        <i [vlClick]="selectSize(small)"  class="toolbar__tool toolbar__brush toolbar__brush_small"></i>
+        <i [vlClick]="selectSize(medium)" class="toolbar__tool toolbar__brush toolbar__brush_medium"></i>
+        <i [vlClick]="selectSize(big)"    class="toolbar__tool toolbar__brush toolbar__brush_big"></i>
+        <i [vlClick]="erase()"            class="toolbar__tool">e</i>
+      </article>
+    </section>
+    <section class="crocodile__chatplace">
+      <section class="chatplace__messages">
+        <div id="messages-container" class="messages__container">
+          <article *vlFor="let item of messages" class="message {{message.class}}">{{message.text}}</article>
+        </div>
+      </section>
+      <section class="chatplace__ipnut">
+        <input type="text">
+        <button>></button>
+      </section>
+      <section class="crocodile__users">
+        <article *vlFor="let user of users" class="user {{user.class}}">{{user.name}} <small>{{user.guessed}}</small></article>
+      </section>
+    </section>
+  </section>
+</div>

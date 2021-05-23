@@ -1,0 +1,9 @@
+<nav class="topnav" id="topnav">
+    <a [vlClick]="navigate(event, /main)"> <img class="logo" src="/logo.png" class="logo" width="60" height="60" alt="logo"></a>
+    <a [vlClick]="navigate(event, /main)" class="topnav__link" href="/main">Main</a>
+    <a [vlClick]="navigate(event, /create)" class="topnav__link" href="/create">Create Game</a>
+    <a [vlClick]="navigate(event, /list)" class="topnav__link" href="/list">Game List</a>
+    <a [vlClick]="navigate(event, /auth)" [vlShow]="!isAuth" class="topnav__link" href="/auth">Auth</a>
+    <a [vlClick]="logout(event, /auth)" [vlShow]="isAuth" class="topnav__link" href="/auth">Logout from <span [vlModel]="displayName"></span></a>
+    <i [vlClick]="toggleNavBar()" class="toggler">=</i>
+</nav>

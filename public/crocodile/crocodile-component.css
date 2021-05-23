@@ -1,0 +1,288 @@
+.crocodile {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: var(--shadow-light);
+}
+
+.crocodile__chatplace {
+    width: 35%;
+}
+
+.crocodile__workplace {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.workplace {
+    background-color: var(--main-color-white);
+    width: 100%;
+    height: 100%;
+}
+
+.current-word {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    font-size: var(--font-size-huge);
+}
+
+.crocodile__chatplace {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.canvasimg {
+    position: absolute;
+    /* top: 10%;
+    left: 52%; */
+    /* top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; */
+}
+
+.crocodile__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.crocodile__chatplace>.message {}
+
+.toolbar__tool {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: var(--shadow-light);
+    margin-right: 10px;
+}
+
+.crocodile__users {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px;
+    border: 1px solid var(--main-color-sub-medium);
+    border-radius: 4px;
+    background-color: var(--main-color-white);
+    box-shadow: var(--shadow-light);
+}
+
+.user small {
+    margin-left: 10px;
+}
+
+.user_own::after {
+    position: absolute;
+    font-size: var(--font-size-small);
+    left: -14px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    text-orientation: sideways-right;
+    content: "you";
+    border: 1px solid var(--main-color-sub-medium);
+    border-radius: 4px;
+    background-color: var(--main-color-white);
+    padding: 2px;
+}
+
+.user_guesser {
+    border-radius: 4px;
+    background-color: var(--main-color-sub-transparent);
+}
+
+.user:nth-child(2n) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--main-color-sub-medium);
+}
+
+.user:nth-child(2n):last-child {
+    border-bottom: 0;
+}
+
+.toolbar__tool:last-child {
+    margin-right: 0;
+}
+
+.toolbar__brush::after {
+    content: " ";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.toolbar__tool_selected {
+    border: 5px solid violet;
+    box-sizing: border-box;
+}
+
+.toolbar__brush_small::after {
+    width: 30%;
+    height: 30%;
+}
+
+.toolbar__brush_medium::after {
+    width: 50%;
+    height: 50%;
+}
+
+.toolbar__brush_big::after {
+    width: 80%;
+    height: 80%;
+}
+
+.toolbar__color_red {
+    background-color: red;
+}
+
+.toolbar__color_green {
+    background-color: green;
+}
+
+.toolbar__color_blue {
+    background-color: blue;
+}
+
+.toolbar__color_white {
+    background-color: white;
+}
+
+.toolbar__color_black {
+    background-color: black;
+}
+
+.workplace__toolbar {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+}
+
+.crocodile__chatplace {}
+
+.message {
+    width: 80%;
+    background-color: var(--main-color-white);
+    height: 40px;
+    border-radius: 4px 4px 4px 0;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+
+.chatplace__messages {
+    height: calc(100% - 30px);
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    height: 0px;
+}
+
+.chatplace__ipnut {
+    display: flex;
+}
+
+.chatplace__ipnut>input,
+.chatplace__ipnut>button {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    padding-left: 10px;
+    outline: none;
+    width: 90%;
+}
+
+.chatplace__ipnut>button {
+    width: 10%;
+    padding: 0;
+}
+
+.crocodile__workplace>img,
+.crocodile__workplace>canvas {
+    /* height: 100%;
+    width: 100%;
+    object-fit: cover; */
+    background-color: #fff;
+}
+
+.chatplace__ipnut {
+    height: 30px;
+    border-left: 1px solid var(--main-color-gray);
+}
+
+.messages__container {
+    width: 100%;
+}
+
+.message_own {
+    margin-left: calc(20% - 10px);
+    background-color: rgba(252, 198, 198, 0.2);
+    border-radius: 4px 4px 0 4px;
+}
+
+@media screen and (min-width: 800px) {
+    .crocodile {
+        margin: auto;
+        width: 80%;
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+
+        box-shadow: var(--shadow-light);
+    }
+
+    .crocodile__workplace {
+        width: 65%;
+        height: 100%;
+        position: relative;
+        background-color: #fff;
+    }
+
+    .workplace {
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+    }
+
+    .toolbar__tool {
+        width: 30px;
+        height: 30px;
+    }
+
+    .workplace {
+        height: 100%;
+    }
+
+
+    .crocodile__chatplace {
+        width: 35%;
+        height: 100%;
+    }
+}

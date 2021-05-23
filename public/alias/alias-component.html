@@ -1,0 +1,20 @@
+<div class="alias__container">
+  <section class="alias">
+    <div class="workplace__container">
+      <span id="timer" class="alias__timer"></span>
+      <section class="alias__workplace">
+        <article [vlModel]="currentWord" [vlShow]="showActions" class="alias-card"></article>
+        <article [vlModel]="result" [vlShow]="isEnd" class="alias-card alias-card_result"></article>
+        <article *vlFor="let item of messages" class="alias-card {{item.class}}">{{item.text}}</article>
+      </section>
+      <section [vlShow]="showActions" class="workplace__actions">
+        <button [vlClick]="wordAction(wrong)" class="action action_wrong"><i>✖</i></button>
+        <button [vlClick]="wordAction(guessed)" class="action action_right"><i>✔</i></button>
+        <button [vlShow]="isPreparingPhase" [vlClick]="changeGameStatus(active)" class="glow-on-hover action_layout">Start</button>
+      </section>
+    </div>
+    <section class="alias__users">
+      <article *vlFor="let user of users" class="user {{user.class}}">{{user.name}} <small>{{user.guessed}}</small></article>
+    </section>
+  </section>
+</div>
